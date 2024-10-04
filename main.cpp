@@ -15,6 +15,33 @@ private:
 	int blue;
 
 public:
+	// default constructor
+	Color() {
+
+		red = 0;
+		green = 0;
+		blue = 0;
+
+	}
+
+	// constructor with parameters for the red, green, and blue components (parameter constructor)
+	Color(int r, int g, int b) {
+
+		red = r;
+		green = g;
+		blue = b;
+
+	}
+
+	// constructor with just the red component parameter (partial constructor)
+	Color(int r) {
+
+		red = r;
+		green = 0;
+		blue = 0;
+
+	}
+
 	// getter and setter for the red component
 	int getRed() const { return red; }
 	void setRed(int r) { red = r; }
@@ -39,36 +66,31 @@ public:
 // returns: int - the exit code of the program
 int main() {
 
-	// create a Color object for each of the following colors, then print them for testing purposes
-	Color red;
-	red.setRed(255);
-	red.setGreen(0);
-	red.setBlue(0);
-
-	Color green;
-	green.setRed(0);
-	green.setGreen(255);
-	green.setBlue(0);
-
-	Color blue;
-	blue.setRed(0);
-	blue.setGreen(0);
-	blue.setBlue(255);
-
+	// create orange using the default constructor and the setter methods
 	Color orange;
 	orange.setRed(255);
 	orange.setGreen(165);
 	orange.setBlue(0);
 
-	Color purple;
-	purple.setRed(128);
-	purple.setGreen(0);
-	purple.setBlue(128);
+	// create green using the parameter constructor
+	Color green = Color(0, 255, 0);
 
-	red.print();
-	green.print();
-	blue.print();
+	// create red using the partial constructor
+	Color red = Color(255);
+
+	// create blue using the default constructor and the setter methods
+	Color blue;
+	blue.setRed(0);
+	blue.setGreen(0);
+	blue.setBlue(255);
+
+	// create purple using the parameter constructor
+	Color purple = Color(128, 0, 128);
+
 	orange.print();
+	green.print();
+	red.print();
+	blue.print();
 	purple.print();
 
 	return 0;
